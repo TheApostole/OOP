@@ -2,46 +2,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Car car = new Car();
-        car.brand = "Lada";
-        car.model = "Granta";
-        car.year = 2015;
-        car.country = "Россия";
-        car.color = "желтый";
-        car.engineVolume = 1.7;
+        Car car = new Car("Lada", "Granta", 2015, "Россия", "желтый", 1.7);
+        Car car2 = new Car("Audi", "A8 50L TDI quattro", 2020, "Германия", "чёрный", 3.0);
+        Car car3 = new Car("BMW", "Z8", 2021, "Германия", "чёрный", 3.0);
+        Car car4 = new Car("Kia", "Sportage 4-го поколения", 2018, "Южная Корея", "красный", 2.4);
+        Car car5 = new Car("Hyundai", "Avante", 2016, "Южная Корея", "оранжевый", 1.6);
         System.out.println(car);
-
-        car.brand = "Audi";
-        car.model = "A8 50L TDI quattro";
-        car.year = 2020;
-        car.country = "Германия";
-        car.color = "чёрный";
-        car.engineVolume = 3.0;
-        System.out.println(car);
-
-        car.brand = "BMW";
-        car.model = "Z8";
-        car.year = 2021;
-        car.country = "Германия";
-        car.color = "чёрный";
-        car.engineVolume = 3.0;
-        System.out.println(car);
-
-        car.brand = "Kia";
-        car.model = "Sportage 4-го поколения";
-        car.year = 2018;
-        car.country = "Южная Корея";
-        car.color = "красный";
-        car.engineVolume = 2.4;
-        System.out.println(car);
-
-        car.brand = "Hyundai";
-        car.model = "Avante";
-        car.year = 2016;
-        car.country = "Южная Корея";
-        car.color = "оранжевый";
-        car.engineVolume = 1.6;
-        System.out.println(car);
+        System.out.println(car2);
+        System.out.println(car3);
+        System.out.println(car4);
+        System.out.println(car5);
     }
 
 }
