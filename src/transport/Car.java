@@ -207,7 +207,5 @@ public class Car {
             }
             return " доступен";
         }
-
-
     }
 }
