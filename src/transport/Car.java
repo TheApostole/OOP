@@ -14,7 +14,6 @@ public class Car {
     private String transmission;
     private String registrationNumber;
     public boolean rubber;
-
     private Key key;
 
     /**
@@ -171,12 +170,13 @@ public class Car {
                 + ", Количество мест: " + numberOfSeats + ", Резина:" + outputOfTheAttribute()
                 + ", Удалённый запуск двигателя: " + key.outputOfTheStartupParameter() + ", Бесключевой доступ: " + key.outputOfTheAccessParameter();
     }
+
     public static class Key {
         private final Boolean remoteEngineStart;
         private final Boolean keylessAccess;
 
         /**
-        * Конструктор
+         * Конструктор
          */
         public Key(Boolean remoteEngineStart, Boolean keylessAccess) {
             this.remoteEngineStart = validateOfParameters(remoteEngineStart);
@@ -192,8 +192,9 @@ public class Car {
             }
             return parameter;
         }
+
         /**
-         * Метод
+         * Методы
          */
         public String outputOfTheStartupParameter(){
             if (!remoteEngineStart) {
