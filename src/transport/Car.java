@@ -14,7 +14,6 @@ public class Car {
     private String transmission;
     private String registrationNumber;
     public boolean rubber;
-
     private Key key;
 
     /**
@@ -92,6 +91,7 @@ public class Car {
      */
     public Car(String brand, String model, int year, String country, String color, double engineVolume,
                String transmission, String bodyType, String registrationNumber, int numberOfSeats, Key key) {
+               String transmission, String bodyType, String registrationNumber, int numberOfSeats) {
         this.brand = validateOfCarParameters(brand);
         this.model = validateOfCarParameters(model);
         this.engineVolume = validateOfCarEngineVolume(engineVolume);
