@@ -14,6 +14,7 @@ public class Car {
     private String transmission;
     private String registrationNumber;
     public boolean rubber;
+    private Key key;
 
     /**
      * Геттеры
@@ -89,6 +90,7 @@ public class Car {
      *Конструктор
      */
     public Car(String brand, String model, int year, String country, String color, double engineVolume,
+               String transmission, String bodyType, String registrationNumber, int numberOfSeats, Key key) {
                String transmission, String bodyType, String registrationNumber, int numberOfSeats) {
         this.brand = validateOfCarParameters(brand);
         this.model = validateOfCarParameters(model);
@@ -100,6 +102,7 @@ public class Car {
         this.bodyType = validateOfCarParameters(bodyType);
         this.registrationNumber = validateRegistrationNumber(registrationNumber);
         this.numberOfSeats = validateOfCarNumberOfSeats(numberOfSeats);
+        this.key = key;
     }
 
     /**
@@ -164,6 +167,45 @@ public class Car {
         return "Марка: " + brand + ", Модель: " + model + ", Год выпуска: " + year
                 + ", Страна производства: " + country + ", Цвет кузова: " + color
                 + ", Объём двигателя: " + engineVolume + ", Коробка передач: " + transmission
-                + ", Тип кузова: " + bodyType + ", Регистрационный номер: " + registrationNumber + ", Количество мест: " + numberOfSeats + ", Резина:" + outputOfTheAttribute();
+                + ", Тип кузова: " + bodyType + ", Регистрационный номер: " + registrationNumber
+                + ", Количество мест: " + numberOfSeats + ", Резина:" + outputOfTheAttribute()
+                + ", Удалённый запуск двигателя: " + key.outputOfTheStartupParameter() + ", Бесключевой доступ: " + key.outputOfTheAccessParameter();
+    }
+    public static class Key {
+        private final Boolean remoteEngineStart;
+        private final Boolean keylessAccess;
+
+        /**
+        * Конструктор
+         */
+        public Key(Boolean remoteEngineStart, Boolean keylessAccess) {
+            this.remoteEngineStart = validateOfParameters(remoteEngineStart);
+            this.keylessAccess = validateOfParameters(keylessAccess);
+        }
+
+        /**
+         * Проверки
+         */
+        public static boolean validateOfParameters (Boolean parameter){
+            if(parameter != null) {
+                return parameter;
+            }
+            return parameter;
+        }
+        /**
+         * Метод
+         */
+        public String outputOfTheStartupParameter(){
+            if (!remoteEngineStart) {
+                return " отсутствует";
+            }
+            return " доступен";
+        }
+        public String outputOfTheAccessParameter(){
+            if (!keylessAccess) {
+                return " отсутствует";
+            }
+            return " доступен";
+        }
     }
 }
