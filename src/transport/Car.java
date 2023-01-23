@@ -91,7 +91,6 @@ public class Car {
      */
     public Car(String brand, String model, int year, String country, String color, double engineVolume,
                String transmission, String bodyType, String registrationNumber, int numberOfSeats, Key key) {
-               String transmission, String bodyType, String registrationNumber, int numberOfSeats) {
         this.brand = validateOfCarParameters(brand);
         this.model = validateOfCarParameters(model);
         this.engineVolume = validateOfCarEngineVolume(engineVolume);
@@ -171,12 +170,13 @@ public class Car {
                 + ", Количество мест: " + numberOfSeats + ", Резина:" + outputOfTheAttribute()
                 + ", Удалённый запуск двигателя: " + key.outputOfTheStartupParameter() + ", Бесключевой доступ: " + key.outputOfTheAccessParameter();
     }
+
     public static class Key {
         private final Boolean remoteEngineStart;
         private final Boolean keylessAccess;
 
         /**
-        * Конструктор
+         * Конструктор
          */
         public Key(Boolean remoteEngineStart, Boolean keylessAccess) {
             this.remoteEngineStart = validateOfParameters(remoteEngineStart);
@@ -192,8 +192,9 @@ public class Car {
             }
             return parameter;
         }
+
         /**
-         * Метод
+         * Методы
          */
         public String outputOfTheStartupParameter(){
             if (!remoteEngineStart) {
