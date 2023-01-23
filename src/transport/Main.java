@@ -15,13 +15,11 @@ public class Main {
                 " ", "седан", "А162ЛП77", 5, new Car.Key(false, true));
         Car car5 = new Car("", "", 0, "", "", 0,
                 " ", "седан", "Д389ПД77", 5, new Car.Key(true, false));
-                
         car.typeOfRubber(11);
         car2.typeOfRubber(11);
         car3.typeOfRubber(6);
         car4.typeOfRubber(9);
         car5.typeOfRubber(2);
-        
         System.out.println(car);
         System.out.println(car2);
         System.out.println(car3);
