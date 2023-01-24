@@ -2,14 +2,9 @@ package transport;
 
 import java.util.regex.Pattern;
 
-public class Car {
-    private final String brand;
-    private final String model;
-    private final int year;
-    private final String country;
+public class Car extends Transport {
     private final String bodyType;
     private final int numberOfSeats;
-    private String color;
     private double engineVolume;
     private String transmission;
     private String registrationNumber;
@@ -19,28 +14,8 @@ public class Car {
     /**
      * Геттеры
      */
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
     public double getEngineVolume() {
         return engineVolume;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
     }
 
     public String getTransmission() {
@@ -70,10 +45,6 @@ public class Car {
         this.engineVolume = engineVolume;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public void setTransmission(String transmission) {
         this.transmission = transmission;
     }
@@ -89,59 +60,15 @@ public class Car {
     /**
      *Конструктор
      */
-    public Car(String brand, String model, int year, String country, String color, double engineVolume,
+    public Car(String brand, String model, int year, String country, String color, int maximumSpeed, double engineVolume,
                String transmission, String bodyType, String registrationNumber, int numberOfSeats, Key key) {
-        this.brand = validateOfCarParameters(brand);
-        this.model = validateOfCarParameters(model);
-        this.engineVolume = validateOfCarEngineVolume(engineVolume);
-        this.color = validateOfCarColor(color);
-        this.year = validateOfCarYear(year);
-        this.country = validateOfCarParameters(country);
-        this.transmission = validateOfCarParameters(transmission);
-        this.bodyType = validateOfCarParameters(bodyType);
-        this.registrationNumber = validateRegistrationNumber(registrationNumber);
-        this.numberOfSeats = validateOfCarNumberOfSeats(numberOfSeats);
+        super(brand, model, year, country, color, maximumSpeed);
+        this.engineVolume = ValidateUtils.validateOfCarEngineVolume(engineVolume);
+        this.transmission = ValidateUtils.validateOfCarParameters(transmission);
+        this.bodyType = ValidateUtils.validateOfCarParameters(bodyType);
+        this.registrationNumber = ValidateUtils.validateRegistrationNumber(registrationNumber);
+        this.numberOfSeats = ValidateUtils.validateOfCarNumberOfSeats(numberOfSeats);
         this.key = key;
-    }
-
-    /**
-     *Проверки
-     */
-    public static String validateOfCarParameters (String parameter) {
-        if(parameter == null || parameter.trim().isEmpty()) {
-            parameter = "Default";
-        }
-        return parameter;
-    }
-    public static String validateOfCarColor (String parameter) {
-        if(parameter == null || parameter.trim().isEmpty()) {
-            parameter = "белый";
-        }
-        return parameter;
-    }
-    public static int validateOfCarYear (Integer parameter) {
-        if(parameter <= 1769 || parameter == null) {
-            parameter = 2000;
-        }
-        return parameter;
-    }
-    public static double validateOfCarEngineVolume (Double parameter) {
-        if(parameter <= 0 || parameter == null) {
-            parameter = 1.5;
-        }
-        return parameter;
-    }
-    public static int validateOfCarNumberOfSeats (Integer parameter) {
-        if(parameter < 2 || parameter > 7 || parameter == null) {
-            parameter = 5;
-        }
-        return parameter;
-    }
-    public static String validateRegistrationNumber(String number) {
-        if (Pattern.matches("[А-Я][0-9]{3}[А-Я]{2}[0-9]{2,3}", number)) {
-            return number;
-        }
-        return "Некорректный номер";
     }
 
     /**
@@ -155,17 +82,19 @@ public class Car {
             rubber = false;
         }
     }
+
     public String outputOfTheAttribute(){
         if (!rubber) {
             return " летняя";
         }
         return " зимняя";
     }
+
     @Override
     public String toString() {
-        return "Марка: " + brand + ", Модель: " + model + ", Год выпуска: " + year
-                + ", Страна производства: " + country + ", Цвет кузова: " + color
-                + ", Объём двигателя: " + engineVolume + ", Коробка передач: " + transmission
+        return "Марка: " + getBrand() + ", Модель: " + getModel() + ", Год выпуска: " + getYear()
+                + ", Страна производства: " + getCountry() + ", Цвет кузова: " + getColor()
+                + ", Максимальная скорость: " + getMaximumSpeed() + " км/ч" + ", Объём двигателя: " + engineVolume + ", Коробка передач: " + transmission
                 + ", Тип кузова: " + bodyType + ", Регистрационный номер: " + registrationNumber
                 + ", Количество мест: " + numberOfSeats + ", Резина:" + outputOfTheAttribute()
                 + ", Удалённый запуск двигателя: " + key.outputOfTheStartupParameter() + ", Бесключевой доступ: " + key.outputOfTheAccessParameter();
@@ -179,18 +108,8 @@ public class Car {
          * Конструктор
          */
         public Key(Boolean remoteEngineStart, Boolean keylessAccess) {
-            this.remoteEngineStart = validateOfParameters(remoteEngineStart);
-            this.keylessAccess = validateOfParameters(keylessAccess);
-        }
-
-        /**
-         * Проверки
-         */
-        public static boolean validateOfParameters (Boolean parameter){
-            if(parameter != null) {
-                return parameter;
-            }
-            return parameter;
+            this.remoteEngineStart = ValidateUtils.validateOfParameters(remoteEngineStart);
+            this.keylessAccess = ValidateUtils.validateOfParameters(keylessAccess);
         }
 
         /**
