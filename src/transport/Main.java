@@ -28,6 +28,12 @@ public class Main {
         System.out.println(car2);
         System.out.println(car3);
         System.out.println(car4);
+        car.startMoving();
+        car.pitStop();
+        car.bestLapTime();
+        car.maximumSpeed();
+        car.finishTheMovement();
+
 //        System.out.println(car5);
 
 //        Bus bus = new Bus("MAN", "Lion's Intercity", 2018, "Германия", "белый", 85);
@@ -42,7 +48,11 @@ public class Main {
         System.out.println(bus2);
         System.out.println(bus3);
         System.out.println(bus4);
-
+        bus.startMoving();
+        bus.pitStop();
+        bus.bestLapTime();
+        bus.maximumSpeed();
+        bus.finishTheMovement();
 
 
         Trucks trucks = new Trucks("Isuzu", "Forward", 7.8);
@@ -53,5 +63,10 @@ public class Main {
         System.out.println(trucks2);
         System.out.println(trucks3);
         System.out.println(trucks4);
+        trucks.startMoving();
+        trucks.pitStop();
+        trucks.bestLapTime();
+        trucks.maximumSpeed();
+        trucks.finishTheMovement();
     }
 }

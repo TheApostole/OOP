@@ -1,6 +1,6 @@
 package transport;
 
-public abstract class Transport {
+public abstract class Transport implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
@@ -60,18 +60,19 @@ public abstract class Transport {
         this.brand = ValidateUtils.validateOfCarParameters(brand);
         this.model = ValidateUtils.validateOfCarParameters(model);
         this.engineVolume = ValidateUtils.validateOfCarEngineVolume(engineVolume);
+    }
 //        this.year = ValidateUtils.validateOfCarYear(year);
 //        this.country = ValidateUtils.validateOfCarParameters(country);
 //        this.color = ValidateUtils.validateOfCarColor(color);
 //        this.maximumSpeed = ValidateUtils.validateOfMaximumSpeed(maximumSpeed);
-    }
+
 
     /**
      * Методы
      */
-   abstract void start();
+   abstract void startMoving();
 
-   abstract void finish();
+   abstract void finishTheMovement();
 
     public String toString() {
         return "Марка: " + brand + ", Модель: " + model + ", Объём двигателя: " + engineVolume;

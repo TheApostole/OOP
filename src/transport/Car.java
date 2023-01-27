@@ -1,7 +1,5 @@
 package transport;
 
-import java.util.regex.Pattern;
-
 public class Car extends Transport {
 
 
@@ -81,13 +79,28 @@ public class Car extends Transport {
      * Методы
      */
     @Override
-    void start() {
-
+    void startMoving() {
+        System.out.println("===СТАРТ===");
     }
 
     @Override
-    void finish() {
+    void finishTheMovement() {
+        System.out.println("===ФИНИШ===");
+    }
 
+    @Override
+    public void pitStop() {
+        System.out.println("Время «Пит-стоп»");
+    }
+
+    @Override
+    public void bestLapTime() {
+        System.out.println("Лучшее время круга");
+    }
+
+    @Override
+    public void maximumSpeed() {
+        System.out.println("Максимальная скорость");
     }
 }
 //    public void typeOfRubber (int month) {
