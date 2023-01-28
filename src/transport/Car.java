@@ -1,7 +1,8 @@
 package transport;
 
-public class Car extends Transport {
+import java.text.DecimalFormat;
 
+public class Car extends Transport {
 
 //    private final String bodyType;
 //    private final int numberOfSeats;
@@ -80,27 +81,42 @@ public class Car extends Transport {
      */
     @Override
     void startMoving() {
-        System.out.println("===СТАРТ===");
+        System.out.println("Легковой автомобиль " + getBrand() + " " + getModel() + " начал движение");
     }
 
     @Override
     void finishTheMovement() {
-        System.out.println("===ФИНИШ===");
+        System.out.println("Легковой автомобиль " + getBrand() + " " + getModel() + " закончил движение");
     }
 
     @Override
     public void pitStop() {
-        System.out.println("Время «Пит-стоп»");
+        System.out.println("Пит-стоп у легкового автомобиля " + getBrand() + " " + getModel());
     }
 
     @Override
     public void bestLapTime() {
-        System.out.println("Лучшее время круга");
+        double min = 30.0;
+        double max = 100.0;
+        double bestLapTime = (min + (max - min) * Math.random());
+        String formattedDouble = new DecimalFormat("#0.00").format(bestLapTime);
+        System.out.println("Лучшее время круга у легкового автомобиля " + getBrand() + " " + getModel() + " в минутах: " + formattedDouble);
     }
 
     @Override
     public void maximumSpeed() {
-        System.out.println("Максимальная скорость");
+        int min = 60;
+        int max = 300;
+        int bestLapTime = (int) (min + (max - min) * Math.random());
+        System.out.println("Максимальная скорость легкового автомобиля" + getBrand() + " " + getModel() + " состовляет: " + bestLapTime);
+    }
+
+    public void print() {
+        startMoving();
+        bestLapTime();
+        pitStop();
+        maximumSpeed();
+        finishTheMovement();
     }
 }
 //    public void typeOfRubber (int month) {

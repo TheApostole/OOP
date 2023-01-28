@@ -15,7 +15,6 @@ public abstract class Transport implements Competing {
     public String getBrand() {
         return brand;
     }
-
     public String getModel() {
         return model;
     }
@@ -65,7 +64,6 @@ public abstract class Transport implements Competing {
 //        this.country = ValidateUtils.validateOfCarParameters(country);
 //        this.color = ValidateUtils.validateOfCarColor(color);
 //        this.maximumSpeed = ValidateUtils.validateOfMaximumSpeed(maximumSpeed);
-
 
     /**
      * Методы
