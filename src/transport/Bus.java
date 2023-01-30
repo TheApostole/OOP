@@ -4,11 +4,28 @@ import java.text.DecimalFormat;
 
 public class Bus extends Transport {
 
+   private Capacity capacity;
+
+    /**
+     * Геттер
+     */
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    /**
+     * Сеттер
+     */
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
+    }
+
     /**
      * Конструктор
      */
-    public Bus(String brand, String model, double engineVolume) {
+    public Bus(String brand, String model, double engineVolume, Capacity capacity) {
         super(brand, model, engineVolume);
+        this.setCapacity(capacity);
     }
 
     /**
@@ -52,5 +69,13 @@ public class Bus extends Transport {
         pitStop();
         maximumSpeed();
         finishTheMovement();
+    }
+
+    void printType() {
+        if (getCapacity() == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(getCapacity());
+        }
     }
 }

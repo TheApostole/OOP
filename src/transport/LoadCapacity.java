@@ -1,12 +1,13 @@
 package transport;
 
 public enum LoadCapacity {
+
     N1(null, 3.5f),
     N2(3.5f, 12f),
-    N3(12f, 500f);
+    N3(12f, null);
 
-    private Float min;
-    private Float max;
+    private final Float min;
+    private final Float max;
 
     LoadCapacity (Float min, Float max) {
         this.min = min;
