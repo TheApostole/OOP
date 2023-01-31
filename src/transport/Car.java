@@ -22,8 +22,8 @@ public class Car extends Transport {
     /**
      * Конструктор
      */
-    public Car(String brand, String model, double engineVolume, BodyType bodyType) {
-        super(brand, model, engineVolume);
+    public Car(String brand, String model, double engineVolume, boolean diagnostics, BodyType bodyType) {
+        super(brand, model, engineVolume, diagnostics);
         this.setBodyType(bodyType);
     }
 
@@ -76,5 +76,14 @@ public class Car extends Transport {
         pitStop();
         maximumSpeed();
         finishTheMovement();
+    }
+
+    @Override
+    void passDiagnostics() {
+        if(isDiagnostics() == true) {
+            System.out.println("Пройти диагностику!");
+        } else {
+            System.out.println("Нет необходимости проходить диагностику");
+        }
     }
 }

@@ -23,8 +23,8 @@ public class Bus extends Transport {
     /**
      * Конструктор
      */
-    public Bus(String brand, String model, double engineVolume, Capacity capacity) {
-        super(brand, model, engineVolume);
+    public Bus(String brand, String model, double engineVolume, boolean diagnostics, Capacity capacity) {
+        super(brand, model, engineVolume, diagnostics);
         this.setCapacity(capacity);
     }
 
@@ -76,6 +76,17 @@ public class Bus extends Transport {
             System.out.println("Данных по транспортному средству недостаточно");
         } else {
             System.out.println(getCapacity());
+        }
+    }
+
+    @Override
+    void passDiagnostics() {
+        if(isDiagnostics() || !isDiagnostics()) {
+            try {
+                throw new TransportTypeException("Автобусы диагностику проходить не должны!");
+            } catch (TransportTypeException r) {
+                System.out.println("Диагностику проходить не нужно!!!");
+            }
         }
     }
 }

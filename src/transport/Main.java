@@ -3,12 +3,13 @@ package transport;
 public class Main {
     public static void main(String[] args) {
 
-        Car car = new Car("Audi", "A7 RS", 4.0, BodyType.TYPE3);
-        Car car2 = new Car("BMW", "M5", 4.4, BodyType.TYPE1);
-        Car car3 = new Car("Nissan", "GT-R", 3.8, BodyType.TYPE3);
-        Car car4 = new Car("Mercedes-Benz", "AMG 63 AMG III",  4.0, null);
+        Car car = new Car("Audi", "A7 RS", 4.0, true, BodyType.TYPE3);
+        Car car2 = new Car("BMW", "M5", 4.4, true, BodyType.TYPE1);
+        Car car3 = new Car("Nissan", "GT-R", 3.8, true, BodyType.TYPE3);
+        Car car4 = new Car("Mercedes-Benz", "AMG 63 AMG III",  4.0, true, null);
         System.out.println(car);
         car.printType();
+        car.passDiagnostics();
         System.out.println(car2);
         car2.printType();
         System.out.println(car3);
@@ -19,28 +20,33 @@ public class Main {
         car.print();
         System.out.println("==================");
 
-        Bus bus = new Bus("MAN", "Lion's Intercity", 9.00, Capacity.L);
-        Bus bus2 = new Bus("Mercedes-Benz", "Sprinter II", 5.50, Capacity.S);
-        Bus bus3 = new Bus("Scania", "Omni", 12.00, Capacity.EL);
-        Bus bus4 = new Bus("Mercedes-Benz", "Sprinter I", 7.0, Capacity.ES);
+        Bus bus = new Bus("MAN", "Lion's Intercity", 9.00, false, Capacity.L);
+        Bus bus2 = new Bus("Mercedes-Benz", "Sprinter II", 5.50, true, Capacity.S);
+        Bus bus3 = new Bus("Scania", "Omni", 12.00, true, Capacity.EL);
+        Bus bus4 = new Bus("Mercedes-Benz", "Sprinter I", 7.0, true, Capacity.ES);
         System.out.println(bus);
         bus.printType();
+        bus.passDiagnostics();
         System.out.println(bus2);
         bus2.printType();
+        bus2.passDiagnostics();
         System.out.println(bus3);
         bus3.printType();
+        bus3.passDiagnostics();
         System.out.println(bus4);
         bus4.printType();
+        bus4.passDiagnostics();
         System.out.println("==================");
         bus.print();
         System.out.println("==================");
 
-        Truck trucks = new Truck("Isuzu", "Forward", 7.8, LoadCapacity.N1);
-        Truck trucks2 = new Truck("Scania", "P-Series", 12.7, LoadCapacity.N2);
-        Truck trucks3 = new Truck("Volvo", "FE", 7.7, LoadCapacity.N3);
-        Truck trucks4 = new Truck("КамАЗ", "5460", 11.8, null);
+        Truck trucks = new Truck("Isuzu", "Forward", 7.8, false, LoadCapacity.N1);
+        Truck trucks2 = new Truck("Scania", "P-Series", 12.7, true, LoadCapacity.N2);
+        Truck trucks3 = new Truck("Volvo", "FE", 7.7, true, LoadCapacity.N3);
+        Truck trucks4 = new Truck("КамАЗ", "5460", 11.8, true, null);
         System.out.println(trucks);
         trucks.printType();
+        trucks.passDiagnostics();
         System.out.println(trucks2);
         trucks2.printType();
         System.out.println(trucks3);
