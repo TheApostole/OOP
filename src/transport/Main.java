@@ -3,58 +3,50 @@ package transport;
 public class Main {
     public static void main(String[] args) {
 
-//        Car car = new Car("lada ", "", 2015, "Россия", "желтый", 180, 1.7,
-//                " ", "седан", "", 5, new Car.Key(false, false));
-//        Car car2 = new Car("Audi", "A8 50L TDI quattro", 2020, "Германия", "чёрный", 250, 3.0,
-//                " ", "седан", "А152УК77", 5, new Car.Key(true, true));
-//        Car car3 = new Car("BMW", "Z8", 2021, "Германия", "чёрный", 250,3.0,
-//                " ", "седан", "А342ПК777", 5, new Car.Key(false, true));
-//        Car car4 = new Car("Kia", "Sportage 4-го поколения", 2018, "Южная Корея", "красный", 220,2.4,
-//                " ", "седан", "А162ЛП77", 5, new Car.Key(false, true));
-//        Car car5 = new Car("", "", 0, "", "", 0, 0,
-//                " ", " ","Д389ПД77" , 5, new Car.Key(true, false));
-//        car.typeOfRubber(11);
-//        car2.typeOfRubber(11);
-//        car3.typeOfRubber(6);
-//        car4.typeOfRubber(9);
-//        car5.typeOfRubber(2);
-        Car car = new Car("Audi", "A7 RS", 4.0);
-        Car car2 = new Car("BMW", "M5", 4.4);
-        Car car3 = new Car("Nissan", "GT-R", 3.8);
-        Car car4 = new Car("Mercedes-Benz", "AMG 63 AMG III", 4.0);
+        Car car = new Car("Audi", "A7 RS", 4.0, BodyType.TYPE3);
+        Car car2 = new Car("BMW", "M5", 4.4, BodyType.TYPE1);
+        Car car3 = new Car("Nissan", "GT-R", 3.8, BodyType.TYPE3);
+        Car car4 = new Car("Mercedes-Benz", "AMG 63 AMG III",  4.0, null);
         System.out.println(car);
+        car.printType();
         System.out.println(car2);
+        car2.printType();
         System.out.println(car3);
+        car3.printType();
         System.out.println(car4);
+        car4.printType();
         System.out.println("==================");
         car.print();
         System.out.println("==================");
-//        System.out.println(car5);
 
-//        Bus bus = new Bus("MAN", "Lion's Intercity", 2018, "Германия", "белый", 85);
-//        Bus bus1 = new Bus("Mercedes-Benz", "Sprinter II", 2021, "Германия", "серебристый", 140);
-//        Bus bus2 = new Bus("Scania", "Omni", 2004, "Швеция", "белый", 100);
-
-        Bus bus = new Bus("MAN", "Lion's Intercity", 9.0);
-        Bus bus2 = new Bus("Mercedes-Benz", "Sprinter II", 5.5);
-        Bus bus3 = new Bus("Scania", "Omni", 12.0);
-        Bus bus4 = new Bus("Mercedes-Benz", "Sprinter I", 7.0);
+        Bus bus = new Bus("MAN", "Lion's Intercity", 9.00, Capacity.L);
+        Bus bus2 = new Bus("Mercedes-Benz", "Sprinter II", 5.50, Capacity.S);
+        Bus bus3 = new Bus("Scania", "Omni", 12.00, Capacity.EL);
+        Bus bus4 = new Bus("Mercedes-Benz", "Sprinter I", 7.0, Capacity.ES);
         System.out.println(bus);
+        bus.printType();
         System.out.println(bus2);
+        bus2.printType();
         System.out.println(bus3);
+        bus3.printType();
         System.out.println(bus4);
+        bus4.printType();
         System.out.println("==================");
         bus.print();
         System.out.println("==================");
 
-        Truck trucks = new Truck("Isuzu", "Forward", 7.8);
-        Truck trucks2 = new Truck("Scania", "P-Series", 12.7);
-        Truck trucks3 = new Truck("Volvo", "FE", 7.7);
-        Truck trucks4 = new Truck("КамАЗ", "5460", 11.8);
+        Truck trucks = new Truck("Isuzu", "Forward", 7.8, LoadCapacity.N1);
+        Truck trucks2 = new Truck("Scania", "P-Series", 12.7, LoadCapacity.N2);
+        Truck trucks3 = new Truck("Volvo", "FE", 7.7, LoadCapacity.N3);
+        Truck trucks4 = new Truck("КамАЗ", "5460", 11.8, null);
         System.out.println(trucks);
+        trucks.printType();
         System.out.println(trucks2);
+        trucks2.printType();
         System.out.println(trucks3);
+        trucks3.printType();
         System.out.println(trucks4);
+        trucks4.printType();
         System.out.println("==================");
         trucks.print();
         System.out.println("==================");

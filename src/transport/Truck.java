@@ -4,11 +4,28 @@ import java.text.DecimalFormat;
 
 public class Truck extends Transport {
 
+    LoadCapacity loadCapacity;
+
+    /**
+     * Геттер
+     */
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    /**
+     * Сеттер
+     */
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
+    }
+
     /**
      * Конструктор
      */
-    public Truck(String brand, String model, double engineVolume) {
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume);
+        this.setLoadCapacity(loadCapacity);
     }
 
     /**
@@ -44,6 +61,14 @@ public class Truck extends Transport {
         int max = 140;
         int bestLapTime = (int) (min + (max - min) * Math.random());
         System.out.println("Максимальная скорость грузового автомобиля" + getBrand() + " " + getModel() + " состовляет: " + bestLapTime);
+    }
+
+    void printType() {
+        if (getLoadCapacity() == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(getLoadCapacity());
+        }
     }
 
     public void print() {
