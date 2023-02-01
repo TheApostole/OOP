@@ -81,12 +81,10 @@ public class Bus extends Transport {
 
     @Override
     void passDiagnostics() {
-        if(isDiagnostics() || !isDiagnostics()) {
             try {
                 throw new TransportTypeException("Автобусы диагностику проходить не должны!");
             } catch (TransportTypeException r) {
                 System.out.println("Диагностику проходить не нужно!!!");
             }
-        }
     }
 }
