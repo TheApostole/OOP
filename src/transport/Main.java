@@ -1,12 +1,16 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
-        Car car = new Car("Audi", "A7 RS", 4.0, true, BodyType.TYPE3);
-        Car car2 = new Car("BMW", "M5", 4.4, true, BodyType.TYPE1);
-        Car car3 = new Car("Nissan", "GT-R", 3.8, true, BodyType.TYPE3);
-        Car car4 = new Car("Mercedes-Benz", "AMG 63 AMG III",  4.0, true, null);
+        Car car = new Car("Audi", "A7 RS", 4.0, BodyType.TYPE3);
+        Car car2 = new Car("BMW", "M5", 4.4, BodyType.TYPE1);
+        Car car3 = new Car("Nissan", "GT-R", 3.8, BodyType.TYPE3);
+        Car car4 = new Car("Mercedes-Benz", "AMG 63 AMG III",  4.0, null);
         System.out.println(car);
         car.printType();
         car.passDiagnostics();
@@ -20,10 +24,10 @@ public class Main {
         car.print();
         System.out.println("==================");
 
-        Bus bus = new Bus("MAN", "Lion's Intercity", 9.00, false, Capacity.L);
-        Bus bus2 = new Bus("Mercedes-Benz", "Sprinter II", 5.50, true, Capacity.S);
-        Bus bus3 = new Bus("Scania", "Omni", 12.00, true, Capacity.EL);
-        Bus bus4 = new Bus("Mercedes-Benz", "Sprinter I", 7.0, true, Capacity.ES);
+        Bus bus = new Bus("MAN", "Lion's Intercity", 9.00, Capacity.L);
+        Bus bus2 = new Bus("Mercedes-Benz", "Sprinter II", 5.50, Capacity.S);
+        Bus bus3 = new Bus("Scania", "Omni", 12.00, Capacity.EL);
+        Bus bus4 = new Bus("Mercedes-Benz", "Sprinter I", 7.0, Capacity.ES);
         System.out.println(bus);
         bus.printType();
         bus.passDiagnostics();
@@ -40,10 +44,10 @@ public class Main {
         bus.print();
         System.out.println("==================");
 
-        Truck trucks = new Truck("Isuzu", "Forward", 7.8, false, LoadCapacity.N1);
-        Truck trucks2 = new Truck("Scania", "P-Series", 12.7, true, LoadCapacity.N2);
-        Truck trucks3 = new Truck("Volvo", "FE", 7.7, true, LoadCapacity.N3);
-        Truck trucks4 = new Truck("КамАЗ", "5460", 11.8, true, null);
+        Truck trucks = new Truck("Isuzu", "Forward", 7.8, LoadCapacity.N1);
+        Truck trucks2 = new Truck("Scania", "P-Series", 12.7, LoadCapacity.N2);
+        Truck trucks3 = new Truck("Volvo", "FE", 7.7, LoadCapacity.N3);
+        Truck trucks4 = new Truck("КамАЗ", "5460", 11.8, null);
         System.out.println(trucks);
         trucks.printType();
         trucks.passDiagnostics();
@@ -85,5 +89,20 @@ public class Main {
         System.out.println(driverD2.receiveAndPrintInformation(bus2));
         System.out.println(driverD3.receiveAndPrintInformation(bus3));
         System.out.println(driverD4.receiveAndPrintInformation(bus4));
+
+        List<Transport> cars = new ArrayList<>();
+        cars.add(car);
+        cars.add(car2);
+        cars.add(car3);
+        cars.add(car4);
+        cars.add(trucks);
+        cars.add(trucks2);
+        cars.add(trucks3);
+        cars.add(trucks4);
+        cars.add(bus);
+        cars.add(bus2);
+        cars.add(bus3);
+        cars.add(bus4);
+        System.out.println(cars);
     }
 }

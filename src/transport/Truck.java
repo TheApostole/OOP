@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 public class Truck extends Transport {
 
-    LoadCapacity loadCapacity;
+    private LoadCapacity loadCapacity;
 
     /**
      * Геттер
@@ -23,8 +23,8 @@ public class Truck extends Transport {
     /**
      * Конструктор
      */
-    public Truck(String brand, String model, double engineVolume, boolean diagnostics, LoadCapacity loadCapacity) {
-        super(brand, model, engineVolume, diagnostics);
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
+        super(brand, model, engineVolume);
         this.setLoadCapacity(loadCapacity);
 
     }
@@ -83,10 +83,6 @@ public class Truck extends Transport {
 
     @Override
     void passDiagnostics() {
-        if(isDiagnostics() == true) {
             System.out.println("Пройти диагностику!");
-        } else {
-            System.out.println("Нет необходимости проходить диагностику");
-        }
     }
 }

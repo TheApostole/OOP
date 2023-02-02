@@ -23,8 +23,8 @@ public class Bus extends Transport {
     /**
      * Конструктор
      */
-    public Bus(String brand, String model, double engineVolume, boolean diagnostics, Capacity capacity) {
-        super(brand, model, engineVolume, diagnostics);
+    public Bus(String brand, String model, double engineVolume, Capacity capacity) {
+        super(brand, model, engineVolume);
         this.setCapacity(capacity);
     }
 
