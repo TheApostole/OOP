@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 public class Truck extends Transport {
 
-    LoadCapacity loadCapacity;
+    private LoadCapacity loadCapacity;
 
     /**
      * Геттер
@@ -26,6 +26,7 @@ public class Truck extends Transport {
     public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume);
         this.setLoadCapacity(loadCapacity);
+
     }
 
     /**
@@ -63,6 +64,7 @@ public class Truck extends Transport {
         System.out.println("Максимальная скорость грузового автомобиля" + getBrand() + " " + getModel() + " состовляет: " + bestLapTime);
     }
 
+    @Override
     void printType() {
         if (getLoadCapacity() == null) {
             System.out.println("Данных по транспортному средству недостаточно");
@@ -77,5 +79,10 @@ public class Truck extends Transport {
         pitStop();
         maximumSpeed();
         finishTheMovement();
+    }
+
+    @Override
+    void passDiagnostics() {
+            System.out.println("Пройти диагностику!");
     }
 }

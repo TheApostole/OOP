@@ -1,5 +1,9 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -9,6 +13,7 @@ public class Main {
         Car car4 = new Car("Mercedes-Benz", "AMG 63 AMG III",  4.0, null);
         System.out.println(car);
         car.printType();
+        car.passDiagnostics();
         System.out.println(car2);
         car2.printType();
         System.out.println(car3);
@@ -25,12 +30,16 @@ public class Main {
         Bus bus4 = new Bus("Mercedes-Benz", "Sprinter I", 7.0, Capacity.ES);
         System.out.println(bus);
         bus.printType();
+        bus.passDiagnostics();
         System.out.println(bus2);
         bus2.printType();
+        bus2.passDiagnostics();
         System.out.println(bus3);
         bus3.printType();
+        bus3.passDiagnostics();
         System.out.println(bus4);
         bus4.printType();
+        bus4.passDiagnostics();
         System.out.println("==================");
         bus.print();
         System.out.println("==================");
@@ -41,6 +50,7 @@ public class Main {
         Truck trucks4 = new Truck("КамАЗ", "5460", 11.8, null);
         System.out.println(trucks);
         trucks.printType();
+        trucks.passDiagnostics();
         System.out.println(trucks2);
         trucks2.printType();
         System.out.println(trucks3);
@@ -79,5 +89,20 @@ public class Main {
         System.out.println(driverD2.receiveAndPrintInformation(bus2));
         System.out.println(driverD3.receiveAndPrintInformation(bus3));
         System.out.println(driverD4.receiveAndPrintInformation(bus4));
+
+        List<Transport> cars = new ArrayList<>();
+        cars.add(car);
+        cars.add(car2);
+        cars.add(car3);
+        cars.add(car4);
+        cars.add(trucks);
+        cars.add(trucks2);
+        cars.add(trucks3);
+        cars.add(trucks4);
+        cars.add(bus);
+        cars.add(bus2);
+        cars.add(bus3);
+        cars.add(bus4);
+        System.out.println(cars);
     }
 }

@@ -1,6 +1,8 @@
 package transport;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Car extends Transport {
     private BodyType bodyType;
@@ -76,5 +78,10 @@ public class Car extends Transport {
         pitStop();
         maximumSpeed();
         finishTheMovement();
+    }
+
+    @Override
+    void passDiagnostics() {
+            System.out.println("Пройти диагностику!");
     }
 }

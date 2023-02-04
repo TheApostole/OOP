@@ -43,6 +43,8 @@ public abstract class Transport implements Competing {
 
    abstract void printType();
 
+   abstract void passDiagnostics() throws TransportTypeException;
+
     public String toString() {
         return "Марка: " + brand + ", Модель: " + model + ", Объём двигателя: " + engineVolume;
     }

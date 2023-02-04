@@ -78,4 +78,13 @@ public class Bus extends Transport {
             System.out.println(getCapacity());
         }
     }
+
+    @Override
+    void passDiagnostics() {
+            try {
+                throw new TransportTypeException("Автобусы диагностику проходить не должны!");
+            } catch (TransportTypeException r) {
+                System.out.println("Диагностику проходить не нужно!!!");
+            }
+    }
 }
