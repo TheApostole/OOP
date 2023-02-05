@@ -24,8 +24,8 @@ public class Car extends Transport {
     /**
      * Конструктор
      */
-    public Car(String brand, String model, double engineVolume, BodyType bodyType) {
-        super(brand, model, engineVolume);
+    public Car(String brand, String model, double engineVolume, BodyType bodyType, Driver driver, List<Mechanic> mechanics) {
+        super(brand, model, engineVolume, mechanics, driver);
         this.setBodyType(bodyType);
     }
 

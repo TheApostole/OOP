@@ -1,6 +1,7 @@
 package transport;
 
 import java.text.DecimalFormat;
+import java.util.List;
 
 public class Truck extends Transport {
 
@@ -23,12 +24,10 @@ public class Truck extends Transport {
     /**
      * Конструктор
      */
-    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
-        super(brand, model, engineVolume);
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity, Driver driver, List<Mechanic> mechanics) {
+        super(brand, model, engineVolume,mechanics, driver);
         this.setLoadCapacity(loadCapacity);
-
     }
-
     /**
      * Методы
      */

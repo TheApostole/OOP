@@ -1,9 +1,9 @@
 package transport;
 
 import java.text.DecimalFormat;
+import java.util.List;
 
 public class Bus extends Transport {
-
    private Capacity capacity;
 
     /**
@@ -23,8 +23,8 @@ public class Bus extends Transport {
     /**
      * Конструктор
      */
-    public Bus(String brand, String model, double engineVolume, Capacity capacity) {
-        super(brand, model, engineVolume);
+    public Bus(String brand, String model, double engineVolume, Capacity capacity, Driver driver, List<Mechanic> mechanics) {
+        super(brand, model, engineVolume, mechanics, driver);
         this.setCapacity(capacity);
     }
 
