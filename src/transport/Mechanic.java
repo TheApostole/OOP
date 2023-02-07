@@ -4,6 +4,7 @@ public class Mechanic {
     private String name;
     private String surname;
     private String company;
+    private Car dfas;
 
     /**
      * Геттер
@@ -47,12 +48,12 @@ public class Mechanic {
     /**
      * Методы
      */
-    public void performMaintenance() {
-        System.out.println("Провести техобслуживание!");
+    public void performMaintenance(Transport transport) {
+        System.out.println("Механик " + surname + " " + name + " из компании " + company + " проводит техобслуживание автомобиля " + transport);
     }
 
     public void fixTheCar() {
-        System.out.println("Починить машину!");
+        System.out.println("Механик " + surname + " " + name + " из компании " + company + " чинит машину!");
     }
 
     @Override

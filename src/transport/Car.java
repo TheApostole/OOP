@@ -1,7 +1,6 @@
 package transport;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Car extends Transport {
@@ -81,7 +80,7 @@ public class Car extends Transport {
     }
 
     @Override
-    void passDiagnostics() {
-            System.out.println("Пройти диагностику!");
+     boolean passDiagnostics() {
+        return true;
     }
 }

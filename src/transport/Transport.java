@@ -24,6 +24,9 @@ public abstract class Transport implements Competing {
     public List<Mechanic> getMechanics() {
         return mechanics;
     }
+    public Driver getDriver() {
+        return driver;
+    }
 
     /**
      * Сеттеры
@@ -33,6 +36,9 @@ public abstract class Transport implements Competing {
     }
     public void setMechanics(List<Mechanic> mechanics) {
         this.mechanics = mechanics;
+    }
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 
     /**
@@ -55,9 +61,18 @@ public abstract class Transport implements Competing {
 
    abstract void printType();
 
-   abstract void passDiagnostics() throws TransportTypeException;
+   abstract boolean passDiagnostics() throws TransportTypeException;
 
+    public boolean checksTheAdditionToTheQueue() {
+        try {
+            passDiagnostics();
+        } catch (TransportTypeException e) {
+            return false;
+        }
+        return true;
+    }
     public String toString() {
-        return "Марка: " + brand + ", Модель: " + model + ", Объём двигателя: " + engineVolume + ", " + driver + ", " + mechanics;
+        return "Марка: " + brand + ", Модель: " + model + ", Объём двигателя: " + engineVolume;
     }
 }
+

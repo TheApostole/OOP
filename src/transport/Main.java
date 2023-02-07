@@ -1,14 +1,13 @@
 package transport;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Mechanic mechanicOleg = new Mechanic("Олег", "Ефремов", "«Железная булка»");
         Mechanic mechanicIgor = new Mechanic("Игорь", "Ефиров", "«Железная булка»");
         Mechanic mechanicSanek = new Mechanic("Александр", "Ефрамов", "«Хардкорный ремонт»");
-        Mechanic mechanicAndrei = new Mechanic("Андрей", "Евдокий", "«Сталь без границ»");
+        Mechanic mechanicAndrei = new Mechanic("Андрей", "Евдокий", "«Ремонт без границ»");
 
 
         DriverB<Car> driverB = new DriverB<>("Федотов Сергей Андреевич", true, 5);
@@ -44,16 +43,36 @@ public class Main {
         Bus bus4 = new Bus("Mercedes-Benz", "Sprinter I", 7.0, Capacity.ES, driverD4, List.of(mechanicSanek));
         System.out.println(bus);
         bus.printType();
-        bus.passDiagnostics();
+        try {
+            bus.passDiagnostics();
+        } catch (TransportTypeException e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println(bus2);
         bus2.printType();
-        bus2.passDiagnostics();
+        try {
+            bus2.passDiagnostics();
+        } catch (TransportTypeException e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println(bus3);
         bus3.printType();
-        bus3.passDiagnostics();
+        try {
+            bus3.passDiagnostics();
+        } catch (TransportTypeException e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println(bus4);
         bus4.printType();
-        bus4.passDiagnostics();
+        try {
+            bus4.passDiagnostics();
+        } catch (TransportTypeException e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println("==================");
         bus.print();
         System.out.println("==================");
@@ -113,7 +132,40 @@ public class Main {
         cars.add(bus3);
         cars.add(bus4);
         for (Transport j : cars) {
-            System.out.println(j);
+            System.out.println(j + ", " + j.getDriver() + ", " + j.getMechanics());
         }
+        System.out.println("==================");
+        Queue<Transport> transportSS = new ArrayDeque<>();
+        ServiceStation serviceStation = new ServiceStation(transportSS);
+
+        for(Transport transport : cars) {
+            serviceStation.addACarToTheQueue(transport);
+        }
+        System.out.println("==================");
+        serviceStation.carryOutAVehicleInspection(transportSS);
+        System.out.println("==================");
+        serviceStation.carryOutAVehicleInspection(transportSS);
+        System.out.println("==================");
+        serviceStation.carryOutAVehicleInspection(transportSS);
+        System.out.println("==================");
+        serviceStation.carryOutAVehicleInspection(transportSS);
+        System.out.println("==================");
+        serviceStation.carryOutAVehicleInspection(transportSS);
+        System.out.println("==================");
+        serviceStation.carryOutAVehicleInspection(transportSS);
+        System.out.println("==================");
+        serviceStation.carryOutAVehicleInspection(transportSS);
+        System.out.println("==================");
+        serviceStation.carryOutAVehicleInspection(transportSS);
+        System.out.println("==================");
+        serviceStation.carryOutAVehicleInspection(transportSS);
+        serviceStation.addACarToTheQueue(car);
+        serviceStation.addACarToTheQueue(car2);
+        serviceStation.addACarToTheQueue(car3);
+        System.out.println("==================");
+        serviceStation.carryOutAVehicleInspection(transportSS);
+        serviceStation.addACarToTheQueue(car4);
+        System.out.println("==================");
+        serviceStation.carryOutAVehicleInspection(transportSS);
     }
 }
