@@ -44,6 +44,11 @@ public abstract class Driver {
    /**
     * Методы
     */
+   @Override
+   public String toString() {
+      return "Водитель: " + fIODriver;
+   }
+
    abstract void startMoving();
 
    abstract void finishTheMovement();
