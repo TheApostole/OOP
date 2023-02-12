@@ -15,6 +15,7 @@ public class Main {
         DriverB<Car> driverB3 = new DriverB<>("Федотов3 Сергей3 Андреевич3", true, 6);
         DriverB<Car> driverB4 = new DriverB<>("Федотов4 Сергей4 Андреевич4", true, 8);
 
+
         Car car = new Car("Audi", "RS 7", 4.0, BodyType.TYPE3, driverB, List.of(mechanicIgor, mechanicOleg));
         Car car2 = new Car("BMW", "M5", 4.4, BodyType.TYPE1, driverB2, List.of(mechanicIgor));
         Car car3 = new Car("Nissan", "GT-R", 3.8, BodyType.TYPE3, driverB3, List.of(mechanicOleg));
@@ -185,5 +186,33 @@ public class Main {
 
         for (Map.Entry<Transport, List<Mechanic>> carsAndTheirMechanics : carsAndMechanics.entrySet())
             System.out.println(carsAndTheirMechanics);
+
+
+        DriverB<Car> driverB5 = new DriverB<>("Федотов Сергей Андреевич", true, 5);
+        DriverB<Car> driverB6 = new DriverB<>("Федотов Сергей Андреевич", true, 5);
+        DriverB<Car> driverB7 = new DriverB<>("Федотов Сергей Андреевич", true, 5);
+
+
+        HashSet<Driver> drivers = new HashSet<>();
+        drivers.add(driverB);
+        drivers.add(driverB2);
+        drivers.add(driverB3);
+        drivers.add(driverB5);
+        drivers.add(driverB7);
+        drivers.add(driverB6);
+        drivers.add(driverB4);
+        drivers.add(driverC);
+        drivers.add(driverC2);
+        drivers.add(driverC3);
+        drivers.add(driverC4);
+        drivers.add(driverD);
+        drivers.add(driverD2);
+        drivers.add(driverD3);
+        drivers.add(driverD4);
+
+        Iterator<Driver> driverIterator = drivers.iterator();
+        while (driverIterator.hasNext()) {
+            System.out.println(driverIterator.next());
+        }
     }
 }
