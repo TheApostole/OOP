@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.Objects;
+
 public abstract class Driver {
 
    private String fIODriver;
@@ -55,4 +57,16 @@ public abstract class Driver {
 
    abstract void refuelTheCar();
 
+   @Override
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      Driver driver = (Driver) o;
+      return thePresenceOfADriverLicense == driver.thePresenceOfADriverLicense && experience == driver.experience && fIODriver.equals(driver.fIODriver);
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hash(fIODriver, thePresenceOfADriverLicense, experience);
+   }
 }

@@ -15,7 +15,7 @@ public class Main {
         DriverB<Car> driverB3 = new DriverB<>("Федотов3 Сергей3 Андреевич3", true, 6);
         DriverB<Car> driverB4 = new DriverB<>("Федотов4 Сергей4 Андреевич4", true, 8);
 
-        Car car = new Car("Audi", "A7 RS", 4.0, BodyType.TYPE3, driverB, List.of(mechanicIgor, mechanicOleg));
+        Car car = new Car("Audi", "RS 7", 4.0, BodyType.TYPE3, driverB, List.of(mechanicIgor, mechanicOleg));
         Car car2 = new Car("BMW", "M5", 4.4, BodyType.TYPE1, driverB2, List.of(mechanicIgor));
         Car car3 = new Car("Nissan", "GT-R", 3.8, BodyType.TYPE3, driverB3, List.of(mechanicOleg));
         Car car4 = new Car("Mercedes-Benz", "AMG 63 AMG III",  4.0, null, driverB4, List.of(mechanicIgor));
@@ -167,5 +167,23 @@ public class Main {
         serviceStation.addACarToTheQueue(car4);
         System.out.println("==================");
         serviceStation.carryOutAVehicleInspection(transportSS);
+
+        Car car5 = new Car("Audi", "RS 7", 4.0, BodyType.TYPE3, driverB, List.of(mechanicIgor, mechanicOleg));
+        Car car6 = new Car("BMW", "M5", 4.4, BodyType.TYPE1, driverB2, List.of(mechanicIgor));
+        Car car7 = new Car("Nissan", "GT-R", 3.8, BodyType.TYPE3, driverB3, List.of(mechanicOleg));
+        Car car8 = new Car("Mercedes-Benz", "AMG 63 AMG III",  4.0, null, driverB4, List.of(mechanicIgor));
+
+        Map <Transport, List<Mechanic>> carsAndMechanics = new HashMap<>();
+        carsAndMechanics.put(car , List.of(mechanicIgor, mechanicOleg));
+        carsAndMechanics.put(car2 , List.of(mechanicIgor));
+        carsAndMechanics.put(car3 , List.of(mechanicOleg));
+        carsAndMechanics.put(car4 , List.of(mechanicIgor));
+        carsAndMechanics.put(car5 , List.of(mechanicIgor, mechanicOleg));
+        carsAndMechanics.put(car6 , List.of(mechanicIgor));
+        carsAndMechanics.put(car7 , List.of(mechanicOleg));
+        carsAndMechanics.put(car8 , List.of(mechanicIgor));
+
+        for (Map.Entry<Transport, List<Mechanic>> carsAndTheirMechanics : carsAndMechanics.entrySet())
+            System.out.println(carsAndTheirMechanics);
     }
 }
