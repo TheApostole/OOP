@@ -185,5 +185,32 @@ public class Main {
 
         for (Map.Entry<Transport, List<Mechanic>> carsAndTheirMechanics : carsAndMechanics.entrySet())
             System.out.println(carsAndTheirMechanics);
+
+        DriverB<Car> driverB5 = new DriverB<>("Федотов Сергей Андреевич", true, 5);
+        DriverB<Car> driverB6 = new DriverB<>("Федотов Сергей Андреевич", true, 5);
+        DriverB<Car> driverB7 = new DriverB<>("Федотов Сергей Андреевич", true, 5);
+
+        HashSet<Driver> drivers = new HashSet<>();
+        drivers.add(driverB);
+        drivers.add(driverB2);
+        drivers.add(driverB3);
+        drivers.add(driverB5);
+        drivers.add(driverB7);
+        drivers.add(driverB6);
+        drivers.add(driverB4);
+        drivers.add(driverC);
+        drivers.add(driverC2);
+        drivers.add(driverC3);
+        drivers.add(driverC4);
+        drivers.add(driverD);
+        drivers.add(driverD2);
+        drivers.add(driverD3);
+        drivers.add(driverD4);
+
+        Iterator<Driver> driverIterator = drivers.iterator();
+
+        while (driverIterator.hasNext()) {
+            System.out.println(driverIterator.next());
+        }
     }
 }
